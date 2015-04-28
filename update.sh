@@ -73,7 +73,10 @@ for version in "${versions[@]}"; do
 	
 	sudo chown -R "$(id -u):$(id -g)" "$dir"
 
-	echo 'RUN wget --no-check-certificate https://github.com/armbuild/qemu-user-static/raw/master/x86_64/qemu-arm-static -O /usr/bin/qemu-arm-static && chmod +x /usr/bin/qemu-arm-static' >> "${dir}"/Dockerfile
+	wget --no-check-certificate https://github.com/armbuild/qemu-user-static/raw/master/x86_64/qemu-arm-static -O "${dir}"/qemu-arm-static
+	chmod +x "${dir}/qemu-arm-static"
+
+	echo "COPY ./qemu-arm-static /usr/bin/" >> "${dir}"/Dockerfile
 	
 	if [ "$repo" ]; then
 		( set -x && docker build -t "${repo}:${suite}" "$dir" )

@@ -1,0 +1,5 @@
++ mkdir -p /root/docker-brew-debian/squeeze/rootfs
++ debootstrap --variant=minbase --components=main --include=inetutils-ping,iproute,wget --arch=armhf squeeze /root/docker-brew-debian/squeeze/rootfs http://httpredir.debian.org/debian
+W: Cannot check Release signature; keyring file not available /usr/share/keyrings/debian-archive-keyring.gpg
+I: Retrieving Release 
+E: Invalid Release file, no entry for main/binary-armhf/Packages

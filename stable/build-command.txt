@@ -1,0 +1,3 @@
+mkimage.sh -d . debootstrap --variant=minbase --components=main --include=inetutils-ping,iproute,wget --arch=armhf stable http://httpredir.debian.org/debian
+
+https://github.com/docker/docker/blob/master/contrib/mkimage.sh

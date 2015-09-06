@@ -1,0 +1,3 @@
++ mkdir -p /root/docker-brew-debian/stretch/rootfs
++ debootstrap --variant=minbase --components=main --include=inetutils-ping,iproute2,wget --arch=armhf stretch /root/docker-brew-debian/stretch/rootfs http://httpredir.debian.org/debian
+E: No such script: /usr/share/debootstrap/scripts/stretch
